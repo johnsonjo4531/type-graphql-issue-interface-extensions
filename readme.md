@@ -22,7 +22,7 @@ Without doing anything you should see the one test failing comparing type-graphq
 
 ## More on the Underlying Issue
 
-The following `someMetadata: true` is missing from this interface type's extensions when you try and get the metadata from the query.
+The following `someMetadata: true` is missing from this **InterfaceType**'s extensions when you try and get the metadata from the query.
 
 **src/User.ts**
 ```ts
@@ -38,10 +38,12 @@ export class User {
   @Field({ nullable: true })
   id: number;
 }
+```
 
 I also have the following query:
 
 **src/QueryRoot.ts**
+
 ```ts
 @Resolver(() => Query)
 export class QueryRoot {
